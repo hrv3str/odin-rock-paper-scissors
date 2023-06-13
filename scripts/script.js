@@ -52,6 +52,20 @@ function round() {
             lost();
         }
     } else if (playerChoise === "paper") {
-        if
+        if (cpuChoise === "rock") {
+            win();
+        } else if (cpuChoise === "paper") {
+            tie();
+        } else if (cpuChoise === "scissors") {
+            lost();
+        }
+    } else if (playerChoise === "scissors") {
+        if (cpuChoise === "rock") {
+            lost();
+        } else if (cpuChoise === "paper") {
+            win();
+        } else if (cpuChoise === "scissors") {
+            tie;
+        }
     }
 }
