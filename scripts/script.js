@@ -11,12 +11,12 @@ let roundCounter;
 
 /*players input*/
 
-function playerInput() {
+function getPlayerChoise() {
 playerChoise = prompt("Your turn! Hit Rock, Paper Or Scissors:");
 playerChoise = playerChoise.toLowerCase();
 if (playerChoise !== "rock" && playerChoise !== "paper" && playerChoise !=="scissors") {
     console.log("Wrong! You should promt rock, paper or scissors!");
-    playerInput();
+    getPlayerChoise();
 } else {
     console.log("You hit " + playerChoise + ".")
 };
@@ -24,7 +24,7 @@ if (playerChoise !== "rock" && playerChoise !== "paper" && playerChoise !=="scis
 
 /*cpu input*/
 
-function cpuInput() {
+function getComputerChoise() {
 cpuChoise = cpuChoisePool[Math.floor(Math.random() * 3 + 1)];
 console.log("CPU hits " + cpuChoise + ".")
 }
@@ -48,7 +48,7 @@ function lost() {
     console.log(roundResult);
 }
 
-function round() {
+function game(playerChoise, cpuChoise) {
     switch (playerChoise) {
         case "rock":
             switch (cpuChoise) {
@@ -94,9 +94,9 @@ function round() {
 
 for (roundCounter = 0; roundCounter < 5; roundCounter++) {
     console.log("Round " + (roundCounter + 1) + "!");
-    playerInput();
-    cpuInput();
-    round ();
+    getPlayerChoise();
+    getComputerChoise();
+    game ();
 }
 
 /* end game */
