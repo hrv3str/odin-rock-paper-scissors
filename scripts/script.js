@@ -3,7 +3,7 @@
 let playerScore = 0;
 let cpuScore = 0;
 const cpuChoisePool = ["","rock", "paper", "scissors"];
-const messagePool = ["Round is yours! ", "It'/s a tie. ", "Bad for you! You lost round. ", "Congratulations! You won the game", "Sorry, you/'ve lost."];
+const messagePool = ["Round is yours! ", "It's a tie. ", "Bad for you! You lost round. ", "Congratulations! You won the game", "Sorry, you've lost the game." , "Solid tie, good luck another time"];
 let playerChoise;
 let cpuChoise;
 let roundResult;
@@ -101,4 +101,10 @@ for (roundCounter = 0; roundCounter < 5; roundCounter++) {
 
 /* end game */
 
-switch ()
+if (playerScore > cpuScore) {
+    console.log(messagePool[3]);
+} else if (playerScore < cpuScore) {
+    console.log(messagePool[4]);
+} else {
+    console.log(messagePool[5]);
+}
