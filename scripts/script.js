@@ -12,7 +12,7 @@ let roundCounter;
 /*players input*/
 
 function getPlayerChoise() {
-playerChoise = prompt("Your turn! Hit Rock, Paper Or Scissors:");
+//playerChoise = prompt("Your turn! Hit Rock, Paper Or Scissors:");
 playerChoise = playerChoise.toLowerCase();
 if (playerChoise !== "rock" && playerChoise !== "paper" && playerChoise !=="scissors") {
     console.log("Wrong! You should promt rock, paper or scissors!");

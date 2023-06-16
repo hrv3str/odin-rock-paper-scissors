@@ -13,3 +13,9 @@
     --color-main-yellow: #a9c52f;
 }
 
+body {
+    background-color: var(--color-main-dark);
+    padding: none;
+    margin: none;
+}
+
