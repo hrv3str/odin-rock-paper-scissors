@@ -25,3 +25,23 @@ h1, p {
     text-align: center;
 }
 
+p {
+    font-size: large;
+    font-weight: 600;
+}
+
+.button {
+    font-size: xx-large;
+    border: 3px solid var(--color-main-yellow);
+    font-family: "Exo 2", serif;
+    font-weight: 900;
+    color: var(--color-main-yellow);
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 0.7rem;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+}
