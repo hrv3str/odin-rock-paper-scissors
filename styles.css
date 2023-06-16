@@ -19,3 +19,9 @@ body {
     margin: none;
 }
 
+h1, p {
+    font-family: "Exo 2", serif;
+    color: var(--color-main-yellow);
+    text-align: center;
+}
+
