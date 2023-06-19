@@ -14,9 +14,10 @@
         src="https://kit.fontawesome.com/4da175bdfb.js"
         crossorigin="anonymous">
     </script>
+    <!-- <script src="./scripts/script.js"></script> -->
 </head>
 <body>
-    <h1>Welcome to the game of ROCK, PAPER and SCISSORS against your computer</h1>
+    <h1 id="fade-in-text">Welcome to the game of ROCK, PAPER and SCISSORS against your computer</h1>
     <p class="introduction">Five lives, three options and only one winner</p>
     <p class="introduction">So what should it be?</p>
     <div id="start-button" class="button">Lets Begin!</div>
@@ -24,13 +25,14 @@
         <div class="field">
             <p>Your hit:</p>
             <div class="option-container">
-                <div class="option"><i class="fa-regular fa-hand-back-fist"></i></div>
-                <div class="option"><i class="fa-regular fa-hand"></i></div>
-                <div class="option"><i class="fa-regular fa-hand-scissors"></i></div>
+                <div class="option rock"><i class="fa-regular fa-hand-back-fist"></i></div>
+                <div class="option paper"><i class="fa-regular fa-hand"></i></div>
+                <div class="option scissors"><i class="fa-regular fa-hand-scissors"></i></div>
             </div>
         </div>
         <div class="field">
             <p>Computer hit:</p>
+            <div class="option-container"></div>
         </div>
     </div>
 </body>

@@ -42,6 +42,20 @@ h1 {
     color: transparent;
 }
 
+#fade-in-text {
+    opacity: 0;
+    animation: fadeInAnimation 3s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0; /* Start with an opacity of 0 */
+    }
+    to {
+      opacity: 1; /* Fade in to full opacity */
+    }
+  }
+
 /*game field*/
 
 .button {
