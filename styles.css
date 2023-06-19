@@ -19,15 +19,25 @@ body {
     margin: none;
 }
 
-h1, p {
+h1,
+p,
+.introduction,
+.option {
     font-family: "Exo 2", serif;
     color: var(--color-main-yellow);
     text-align: center;
 }
 
-p {
-    font-size: large;
-    font-weight: 600;
+h1 {
+    padding: 1rem;
+    height: 12vh;
+}
+
+.introduction {
+    height: 1px;
+    font-size: small;
+    font-weight: 100;
+    color: transparent;
 }
 
 .button {
@@ -42,20 +52,23 @@ p {
     padding-top: 0.7rem;
     height: fit-content;
     width: fit-content;
-    margin: 3rem auto;
+    margin: 2rem auto;
 
 }
 
 .field-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 10vw;
+    align-items: center;
+    gap: 5vw;
 }
 
 .field {
     border: 3px solid var(--color-main-yellow);
-    width: 44vw;
-    height: 40vh;
+    width: 90vw;
+    height: 20vh;
+    border-radius: 3rem;
 }
 
 .right {
