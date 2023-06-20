@@ -8,7 +8,7 @@
 
 :root {
     --color-main-dark: #283739;
-    --color-off-dark: #f5f5f500;
+    --color-off-dark: #1a1818e5;
     --color-main-blue: #2c5d63;
     --color-main-yellow: #a9c52f;
 }
@@ -42,7 +42,7 @@ h1 {
     color: transparent;
 }
 
-#fade-in-text {
+.fade-in-text {
     opacity: 0;
     animation: fadeInAnimation 3s ease-in forwards;
 }
@@ -73,14 +73,6 @@ h1 {
     margin: 2rem auto;
 }
 
-.pointed {
-    transform: scale(1.1);
-    border: 3px solid var(--color-main-blue);
-    box-shadow: 0px 0px 10px var(--color-main-blue);
-    background-color: var(--color-off-dark);
-    transition: 2s ease-in-out;
-}
-
 .field-container {
     display: flex;
     flex-direction: column;
@@ -93,7 +85,7 @@ h1 {
     border: 3px solid var(--color-main-yellow);
     width: 90vw;
     height: 20vh;
-    border-radius: 3rem;
+    border-radius: 1rem;
 }
 
 .right {
@@ -119,11 +111,63 @@ h1 {
     display: grid;
     place-items: center;
     font-size: 2rem;
-    border: 3px solid var(--color-main-yellow);
+    border: 3px solid var(--color-off-dark);
     border-radius: 1rem;
     height: 50px;
     width: 50px;
     background-color: var(--color-main-dark);
+    z-index: 1;
 }
 
+.option * {
+    color: var(--color-off-dark);
+    z-index: -1;
+}
 
+/*cpu input*/
+
+.no-border {
+    border: none;
+}
+
+/*animations*/
+
+.cpu-highlights,
+.pointed {
+    transform: scale(1.1);
+    color: var(--color-main-blue);
+    border: 3px solid var(--color-main-blue);
+    box-shadow: 0px 0px 15px var(--color-main-blue);
+    transition: 0.5s ease-in-out;
+}
+  
+.cpu-highlights *,
+.pointed *{
+    color: var(--color-main-blue);
+    transition: 0.5s ease-in-out;
+}
+
+.chosen {
+    transform: scale(1.1);
+    color: var(--color-main-yellow);
+    border: 3px solid var(--color-main-yeloow);
+    box-shadow: 0px 0px 15px var(--color-main-yellow);
+    transition: 0.5s ease-in-out;
+}
+  
+.chosen * {
+    color: var(--color-main-yellow);
+    transition: 0.5s ease-in-out;
+}
+
+.no-opacity {
+    opacity: 0;
+}
+
+.cpu-input {
+    transform: scale(1.1);
+    color: var(--color-main-yellow);
+    border: 3px solid var(--color-main-yeloow);
+    box-shadow: 0px 0px 15px var(--color-main-yellow);
+    transition: 0.5s ease-in-out;
+}

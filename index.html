@@ -17,7 +17,11 @@
     <script src="./scripts/script.js" defer></script>
 </head>
 <body>
-    <h1 id="fade-in-text">Welcome to the game of ROCK, PAPER and SCISSORS against your computer</h1>
+    <h1
+        class="fade-in-text"
+        id="message"
+        >Welcome to the game of ROCK, PAPER and SCISSORS against your computer
+    </h1>
     <p class="introduction">Five lives, three options and only one winner</p>
     <p class="introduction">So what should it be?</p>
     <div 
@@ -29,26 +33,26 @@
         <div class="field">
             <div class="option-container">
                 <button 
-                    class="option"
+                    class="option player"
                     name="rock">
-                    <i class="fa-regular fa-hand-back-fist"></i>
+                    <i class="fa-regular fa-hand-back-fist" name="rock"></i>
                 </button>
                 <button
-                    class="option"
+                    class="option player"
                     name="paper">
-                    <i class="fa-regular fa-hand"></i>
+                    <i class="fa-regular fa-hand" name="paper"></i>
                 </button>
                 <button
-                    class="option"
+                    class="option player"
                     name="scissors">
-                    <i class="fa-regular fa-hand-scissors"></i>
+                    <i class="fa-regular fa-hand-scissors" name="scissors"></i>
                 </button>
             </div>
         </div>
         <div class="field">
-            <div class="option-container">
-                <div id="cpu-screen"></div>
-            </div>
+            <div 
+            id="scrn-cpu" 
+            class="button no-border"></div>
         </div>
     </div>
 </body>
