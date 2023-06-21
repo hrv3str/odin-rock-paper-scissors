@@ -201,7 +201,7 @@ function playGame() {
       roundCounter++;
   
       if (cpuScore < 3 && playerScore < 3) {
-        setTimeout(playGame, 3000);
+        setTimeout(playGame, 2000);
       } else {
         if (playerScore > cpuScore) {
           playerScoreOutput.textContent = playerScore;
