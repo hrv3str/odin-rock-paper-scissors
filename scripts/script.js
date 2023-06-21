@@ -10,8 +10,45 @@ let roundCounter = 0;
 const screen = document.getElementById('scrn-button');
 const message = document.getElementById('message');
 const screenCPU = document.getElementById('scrn-cpu')
+const playerOptionDiv = document.getElementById('player-options');
+let divRock;
+let divPaper;
+let divScissors;
 
 /*players input*/
+
+function showPlayerOption() {
+
+  const rock = document.createElement('i'); //creates 'rock' button
+  rock.setAttribute('class', 'fa-regular fa-hand-back-fist');
+  rock.setAttribute('name', 'rock')
+  const rockButton = document.createElement('button');
+  rockButton.setAttribute('class', 'option player slide-in')
+  rockButton.setAttribute('name', 'rock')
+  rockButton.appendChild(rock);
+  divRock = rockButton;
+  playerOptionDiv.appendChild(rockButton);
+
+  const paper = document.createElement('i'); //creates 'paper' button
+  paper.setAttribute('class', 'fa-regular fa-hand');
+  paper.setAttribute('name', 'paper')
+  const paperButton = document.createElement('button');
+  paperButton.setAttribute('class', 'option player slide-in')
+  paperButton.setAttribute('name', 'paper')
+  paperButton.appendChild(paper);
+  divPaper = paperButton;
+  playerOptionDiv.appendChild(paperButton);
+
+  const scissors = document.createElement('i'); //creates 'scissors' button
+  scissors.setAttribute('class', 'fa-regular fa-hand-scissors');
+  scissors.setAttribute('name', 'scissors')
+  const scissorsButton = document.createElement('button');
+  scissorsButton.setAttribute('class', 'option player slide-in')
+  scissorsButton.setAttribute('name', 'scissors')
+  scissorsButton.appendChild(scissors);
+  divScissors = scissorsButton;
+  playerOptionDiv.appendChild(scissorsButton);
+}
 
 function getPlayerInput() {
     const optionButtons = document.querySelectorAll('button.option.player');
