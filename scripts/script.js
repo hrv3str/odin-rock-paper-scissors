@@ -14,6 +14,8 @@ const playerOptionDiv = document.getElementById('player-options');
 let divRock;
 let divPaper;
 let divScissors;
+const playerScoreOutput = document.getElementById('player-score');
+const cpuScoreOutput = document.getElementById('cpu-score');
 
 /*players input*/
 
@@ -113,21 +115,21 @@ function getCpuInput() {
 function tie() {
     roundResult = `${messagePool[1]}Your score is: ${playerScore}. CPU score is: ${cpuScore}.`;
     console.log(roundResult);
-    message.textContent = roundResult;
+    playerOptionDiv.textContent = roundResult;
 }
   
 function win() {
     playerScore++;
     roundResult = `${messagePool[0]}Your score is: ${playerScore}. CPU score is: ${cpuScore}.`;
     console.log(roundResult);
-    message.textContent = roundResult;
+    playerOptionDiv.textContent = roundResult;
 }
   
 function lost() {
     cpuScore++;
     roundResult = `${messagePool[2]}Your score is: ${playerScore}. CPU score is: ${cpuScore}.`;
     console.log(roundResult);
-    message.textContent = roundResult;
+    playerOptionDiv.textContent = roundResult;
 }
 
 function playRound(playerInput, cpuInput) {
@@ -179,9 +181,13 @@ function playRound(playerInput, cpuInput) {
 /* playing the game*/
 
 function playGame() {
+    screen.classList.add('no-click');
+    playerOptionDiv.textContent = '';
     message.textContent = `Round ${roundCounter + 1}!`;
     console.log(`Starting Round ${roundCounter + 1}...`);
-    screenCPU.textContent = `Your score is ${playerScore}. CPU score is ${cpuScore}`;
+    playerScoreOutput.textContent = playerScore;
+    cpuScoreOutput.textContent = cpuScore;
+    screenCPU.textContent = `</>`;
 
       showPlayerOption();
       getPlayerInput().then((input) => {
@@ -195,20 +201,35 @@ function playGame() {
       roundCounter++;
   
       if (cpuScore < 3 && playerScore < 3) {
-        setTimeout(playGame, 5000);
+        setTimeout(playGame, 3000);
       } else {
         if (playerScore > cpuScore) {
+          playerScoreOutput.textContent = playerScore;
           console.log(messagePool[3]);
           message.textContent = messagePool[3];
+          endgame();
         } else if (playerScore < cpuScore) {
+          cpuScoreOutput.textContent = cpuScore;
           console.log(messagePool[4]);
           message.textContent = messagePool[4];
+          endgame();
         } else {
           console.log(messagePool[5]);
           message.textContent = messagePool[5];
+          endgame();
         }
       }
     });
   }
 
   screen.addEventListener('click', playGame);
+
+  function endgame() {
+    screen.textContent = 'Try again';
+    screen.classList.remove('no-click');
+    function reload() {
+      location.reload();
+    };
+    screen.removeEventListener('click', playGame);
+    screen.addEventListener('click', reload);
+  }
