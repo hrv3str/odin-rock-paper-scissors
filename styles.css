@@ -149,7 +149,7 @@ h1 {
 .slide-in {
     opacity: 0;
     transform: translateX(-100%);
-    animation: slide-in 0.5s forwards;
+    animation: slide-in 0.7s forwards;
 }
 
 @keyframes slide-in {
@@ -162,4 +162,20 @@ h1 {
     transform: translateX(0);
 }
 }
-      
+    
+.slide-out {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slide-out 0.7s forwards;
+  }
+  
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }

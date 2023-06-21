@@ -48,6 +48,37 @@ function showPlayerOption() {
   scissorsButton.appendChild(scissors);
   divScissors = scissorsButton;
   playerOptionDiv.appendChild(scissorsButton);
+
+    const totalElements = 3;
+    let transitionCount = 0;
+  
+    function handleTransitionEnd() {
+      transitionCount++;
+  
+      if (transitionCount === totalElements) {
+        return;
+      }
+    }
+    rockButton.addEventListener('transitionend', handleTransitionEnd);
+    paperButton.addEventListener('transitionend', handleTransitionEnd);
+    scissorsButton.addEventListener('transitionend', handleTransitionEnd);
+  
+}
+
+function hidePlayerOption() { //hide each of options
+  const buttons = [divRock, divPaper, divScissors];
+  function removeButton(button) {
+    button.classList.remove('slide-in');
+    button.classList.add('slide-out');
+  const handleTransitionEnd = () => {
+    playerOptionDiv.removeChild(button);
+  };
+  button.addEventListener('transitionend', handleTransitionEnd);
+  }
+  buttons.forEach(removeButton); // plays animation and belete buttons
+  while (playerOptionDiv.firstChild) {
+    playerOptionDiv.firstChild.remove(); //clears the div
+  }
 }
 
 function getPlayerInput() {
@@ -151,10 +182,12 @@ function playGame() {
     message.textContent = `Round ${roundCounter + 1}!`;
     console.log(`Starting Round ${roundCounter + 1}...`);
     screenCPU.textContent = `Your score is ${playerScore}. CPU score is ${cpuScore}`;
-    getPlayerInput().then((input) => {
+
+      showPlayerOption();
+      getPlayerInput().then((input) => {
       playerInput = input;
       screen.textContent = `You chose: ${playerInput}`;
-  
+      hidePlayerOption();
       cpuInput = getCpuInput();
       screenCPU.textContent = `CPU chose: ${cpuInput}`;
   
